@@ -1,0 +1,12 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"Infinite pack manifest v1","type":"object",
+"required":["schema","version","min_app_version","issued_at","packs","signature"],
+"properties":{"schema":{"const":"infinite-packs/1"},"version":{"type":"integer","minimum":1},
+"min_app_version":{"type":"string","pattern":"^\\d+(\\.\\d+){0,2}$"},"issued_at":{"type":"string","format":"date-time"},
+"packs":{"type":"array","items":{"type":"object","additionalProperties":false,
+ "required":["id","type","version","url","mirror_url","sha256","size"],
+ "properties":{"id":{"type":"string","pattern":"^[a-z0-9][a-z0-9._-]{0,63}$"},
+ "type":{"enum":["rules","config","prompts","weights","content","model"]},
+ "version":{"type":"integer","minimum":1},"url":{"type":"string","pattern":"^https://privaku\\.com/infinite/packs/"},
+ "mirror_url":{"type":"string","pattern":"^https://github\\.com/2020-DEV-096/infinite-packs/releases/download/"},
+ "sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"size":{"type":"integer","minimum":1}}}},
+"signature":{"type":"object","required":["alg","key_id","value"],"properties":{"alg":{"const":"ed25519"},"key_id":{"type":"string"},"value":{"type":"string"}}}}}
