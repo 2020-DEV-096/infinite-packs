@@ -1,0 +1,6 @@
+{"_note":"No secrets here. Key ID and the .p8 path are filled once an APNs key exists (none found on the Mac mini, Oct 31 2026).",
+ "topic":"com.sameeran.privaku.infinite",
+ "team_id":"BZ8VA5GJ5J",
+ "key_id":"",
+ "key_path":"/Users/sameeran/RESTRICTED/apns/AuthKey_APNS.p8",
+ "env":"sandbox"}
