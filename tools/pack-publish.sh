@@ -6,8 +6,8 @@
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"; ROOT=/Volumes/ssdDesiSam/Processing/infinite-packs
 PY="$ROOT/.venv/bin/python"
-KEY="${INFINITE_PACK_KEY:-/Users/sameeran/RESTRICTED/infinite-packs/signing-ed25519.key}"
-[ -r "$KEY" ] || KEY="$ROOT/keys/signing-ed25519.key"
+KEY="${INFINITE_PACK_KEY:-/Volumes/ssdDesiSam/Processing/infinite-packs/keys/signing-ed25519.key}"
+[ -r "$KEY" ] || { echo "signing key missing: $KEY"; exit 1; }  # master copy: RESTRICTED/infinite-packs (read-only)
 PUB="$(cat "$HERE/../keys/pack-signing-ed25519.pub.b64")"
 DIR="$1"; VER="$2"; MIN="$3"; TAG="m$VER"; OUT="$ROOT/staging/$TAG"
 [ -e "$OUT" ] && { echo "refusing to overwrite $OUT"; exit 1; }
